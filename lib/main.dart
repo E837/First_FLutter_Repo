@@ -12,18 +12,13 @@ class Home extends StatelessWidget {
         title: Text('this is my first appBar'),
         centerTitle: true,
       ),
-      body: Center(
-        // child: Image.asset('assets/2621720.jpg'),
-        child: RaisedButton.icon(
-          onPressed: () {},
-          color: Colors.amber,
-          label: Text(
-            'its a button',
-          ),
-          icon: Icon(
-            Icons.mail,
-          ),
+      body: Container(
+        color: Colors.yellowAccent,
+        child: Text(
+          'hello container',
         ),
+        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+        margin: EdgeInsets.all(100),
       ),
       floatingActionButton: FloatingActionButton(
         child: Text('+'),

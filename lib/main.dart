@@ -12,13 +12,23 @@ class Home extends StatelessWidget {
         title: Text('this is my first appBar'),
         centerTitle: true,
       ),
-      body: Container(
-        color: Colors.yellowAccent,
-        child: Text(
-          'hello container',
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-        margin: EdgeInsets.all(100),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text('part 1'),
+          RaisedButton.icon(
+            onPressed: () {},
+            label: Text('part 2'),
+            color: Colors.amber,
+            icon: Icon(Icons.mail),
+          ),
+          Container(
+            color: Colors.deepPurpleAccent,
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text('part 3'),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Text('+'),

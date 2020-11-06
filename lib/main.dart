@@ -10,69 +10,118 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.indigo[800],
       appBar: AppBar(
-        title: Text('this is my first appBar'),
+        elevation: 0,
+        backgroundColor: Colors.indigo[600],
         centerTitle: true,
-      ),
-      body: Container(
-        margin: EdgeInsets.only(bottom: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text('part 1'),
-                  RaisedButton.icon(
-                    onPressed: () {},
-                    label: Text('part 2'),
-                    color: Colors.amber,
-                    icon: Icon(Icons.mail),
-                  ),
-                  Container(
-                    color: Colors.deepPurpleAccent,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    child: Text('part 3'),
-                  ),
-                ],
-              ),
-              margin: EdgeInsets.only(top: 40),
-            ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                color: Colors.teal,
-                child: Text('row 2'),
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                margin: EdgeInsets.only(left: 120),
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                color: Colors.pink,
-                child: Text('row 3'),
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                color: Colors.redAccent,
-                child: Text('row 4'),
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                margin: EdgeInsets.only(right: 120),
-              ),
-            ),
-          ],
+        title: Text(
+          'User Profile',
+          style: TextStyle(
+            fontFamily: 'lalezar',
+            fontSize: 25,
+            wordSpacing: 2,
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Text('+'),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage('assets/my_avatar_image.jpg'),
+              ),
+            ),
+            SizedBox(height: 50,),
+            Row(
+              children: [
+                Icon(
+                  Icons.account_circle,
+                  color: Colors.grey[400],
+                ),
+                SizedBox(width: 10,),
+                Text(
+                  'NAME',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10,),
+            Text(
+              'Ehsan Moradi',
+              style: TextStyle(
+                color: Colors.amberAccent,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1,
+                fontSize: 28,
+              ),
+            ),
+            SizedBox(height: 30,),
+            Row(
+              children: [
+                Icon(
+                  Icons.calendar_today_rounded,
+                  color: Colors.grey[400],
+                ),
+                SizedBox(width: 10,),
+                Text(
+                  'DATE OF BIRTH',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10,),
+            Text(
+              '1999/6/3',
+              style: TextStyle(
+                color: Colors.amberAccent,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1,
+                fontSize: 28,
+              ),
+            ),
+            SizedBox(height: 30,),
+            Row(
+              children: [
+                Icon(
+                  Icons.mail,
+                  color: Colors.grey[400],
+                ),
+                SizedBox(width: 10,),
+                Text(
+                  'EMAIL ADDRESS',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10,),
+            Text(
+              'e.moradi274@gmail.com',
+              style: TextStyle(
+                color: Colors.amberAccent,
+                letterSpacing: 1,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
 }
-

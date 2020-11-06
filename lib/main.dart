@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -25,7 +27,7 @@ class Home extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,7 +37,10 @@ class Home extends StatelessWidget {
                 backgroundImage: AssetImage('assets/my_avatar_image.jpg'),
               ),
             ),
-            SizedBox(height: 50,),
+            Divider(
+              height: 60,
+              color: Colors.indigo,
+            ),
             Row(
               children: [
                 Icon(

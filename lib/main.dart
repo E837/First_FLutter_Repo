@@ -8,7 +8,15 @@ void main() => runApp(MaterialApp(
   home: Home(),
 ));
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+
+  int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,9 +131,45 @@ class Home extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
-            )
+            ),
+            SizedBox(height: 30,),
+            Row(
+              children: [
+                Icon(
+                  Icons.addchart,
+                  color: Colors.grey[400],
+                ),
+                SizedBox(width: 10,),
+                Text(
+                  'A SAMPLE COUNTER',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10,),
+            Text(
+              '$counter',
+              style: TextStyle(
+                color: Colors.amberAccent,
+                letterSpacing: 1,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            counter++;
+          });
+        },
+        child: Icon(Icons.add),
       ),
     );
   }

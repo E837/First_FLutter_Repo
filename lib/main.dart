@@ -15,162 +15,30 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  int counter = 0;
+  List<String> sampleQuotes = [
+    'lorem ipsum dolor sit 1',
+    'lorem ipsum dolor sit 2',
+    'lorem ipsum dolor sit 3'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo[800],
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.indigo[600],
+        title: Text('Lists of Data'),
+        backgroundColor: Colors.redAccent,
         centerTitle: true,
-        title: Text(
-          'User Profile',
-          style: TextStyle(
-            fontFamily: 'lalezar',
-            fontSize: 25,
-            wordSpacing: 2,
-          ),
-        ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: CircleAvatar(
-                radius: 60,
-                backgroundImage: AssetImage('assets/my_avatar_image.jpg'),
-              ),
-            ),
-            Divider(
-              height: 60,
-              color: Colors.indigo,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.account_circle,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(width: 10,),
-                Text(
-                  'NAME',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10,),
-            Text(
-              'Ehsan Moradi',
-              style: TextStyle(
-                color: Colors.amberAccent,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1,
-                fontSize: 28,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Row(
-              children: [
-                Icon(
-                  Icons.calendar_today_rounded,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(width: 10,),
-                Text(
-                  'DATE OF BIRTH',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10,),
-            Text(
-              '1999/6/3',
-              style: TextStyle(
-                color: Colors.amberAccent,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1,
-                fontSize: 28,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Row(
-              children: [
-                Icon(
-                  Icons.mail,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(width: 10,),
-                Text(
-                  'EMAIL ADDRESS',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10,),
-            Text(
-              'e.moradi274@gmail.com',
-              style: TextStyle(
-                color: Colors.amberAccent,
-                letterSpacing: 1,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Row(
-              children: [
-                Icon(
-                  Icons.addchart,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(width: 10,),
-                Text(
-                  'A SAMPLE COUNTER',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10,),
-            Text(
-              '$counter',
-              style: TextStyle(
-                color: Colors.amberAccent,
-                letterSpacing: 1,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-          ],
+          children: sampleQuotes.map((quote) {
+            return Text(quote);
+          }).toList(),//or it can be the line below
+          // children: sampleQuotes.map((e) => Text(e)).toList(),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            counter++;
-          });
-        },
-        child: Icon(Icons.add),
       ),
     );
   }
 }
+

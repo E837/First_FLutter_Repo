@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'Quote.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,27 +16,28 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  List<String> sampleQuotes = [
-    'lorem ipsum dolor sit 1',
-    'lorem ipsum dolor sit 2',
-    'lorem ipsum dolor sit 3'
+  List<Quote> sampleQuotes = [
+    Quote(author:'author 1', text:'text 1'),
+    Quote(author:'author 2', text:'text 2'),
+    Quote(author:'author 3', text:'text 3'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lists of Data'),
+        title: Text('Custom Classes'),
         backgroundColor: Colors.redAccent,
         centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Column(
-          children: sampleQuotes.map((quote) {
-            return Text(quote);
-          }).toList(),//or it can be the line below
-          // children: sampleQuotes.map((e) => Text(e)).toList(),
+          children: sampleQuotes.map((quote) => Text('${quote.author} - ${quote.text}')).toList(),
+          // --> the traditional and classic way is commented below
+          // children: sampleQuotes.map((quote) {
+          //   return Text('${quote.author}-${quote.text}');
+          // }).toList(),
         ),
       ),
     );

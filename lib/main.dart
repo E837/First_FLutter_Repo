@@ -34,7 +34,16 @@ class _HomeState extends State<Home> {
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Column(
-          children: sampleQuotes.map((quote) => /*'new' is not needed*/QuoteCard(quote: quote,)).toList()
+          children: sampleQuotes.map((quote) => /*'new' is not needed*/QuoteCard(
+            quote: quote,
+            delete: () {
+              setState(() {
+                sampleQuotes.remove(quote);//now this deleter function will be
+                // transferred to the stateless widget builder
+                // and the builder has access to delete the card
+              });
+            },
+          )).toList()
         ),
       ),
     );

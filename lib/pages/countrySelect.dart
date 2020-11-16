@@ -8,11 +8,12 @@ class CountrySelect extends StatefulWidget {
 class _CountrySelectState extends State<CountrySelect> {
 
   void getData() async{
-    await Future.delayed(Duration(seconds: 5), () {
-      print('you are late 5 seconds');
+    String test = await Future.delayed(Duration(seconds: 2), () {
+      return 'you are late 2 seconds';
     });
-    Future.delayed(Duration(seconds: 2), () {
-      print('you are late 2 seconds');
+    print(test);
+    Future.delayed(Duration(seconds: 5), () {
+      print('you are late 5 seconds');
     });
   }
 

@@ -11,7 +11,7 @@ void main() => runApp(MaterialApp(
   routes: {
     '/': (container) => Waiting(),
     '/home': (container) => Home(),
-    '/countrySelec': (container) => CountrySelect(),
+    '/countrySelect': (container) => CountrySelect(),
   },
 ));
 

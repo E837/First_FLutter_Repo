@@ -26,5 +26,7 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+    void getData() {}
+    getData();
   }
 }
